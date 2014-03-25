@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<core>
+		<connections>
+			<connection>
+				<name>socket</name>
+				<factory>PAPSocketConnectionFactory</factory>
+					<host>127.0.0.1</host>
+					<port>3601</port>
+					<unixPath>/tmp/php.pap.1.sock</unixPath>
+					<wrapperPath>./wrapper.php</wrapperPath>
+			</connection>
+			<connection>
+				<name>socket</name>
+				<factory>PAPSocketConnectionFactory</factory>
+				<host>127.0.0.1</host>
+				<port>3602</port>
+				<unixPath>/tmp/php.pap.2.sock</unixPath>
+				<wrapperPath>./wrapper.php</wrapperPath>
+			</connection>
+		</connections>
+	</core>
+</config>

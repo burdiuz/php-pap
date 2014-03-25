@@ -1,0 +1,22 @@
+* Expire cleared
+* About to connect() to pap port 80 (#0)
+*   Trying 127.0.0.1... * Connected to pap (127.0.0.1) port 80 (#0)
+> POST /wrapper.php?go_online=1&some_param=hello HTTP/1.1
+User-Agent: PAP Module launcher
+Host: pap
+Accept: */*
+Connection: close
+Content-Length: 4
+Content-Type: application/x-www-form-urlencoded
+
+< HTTP/1.1 200 OK
+< Date: Mon, 11 Apr 2011 16:02:49 GMT
+< Server: Apache/2.2.16 (Win32) PHP/5.3.4
+< X-Powered-By: PHP/5.3.4
+< Vary: User-Agent,Accept-Encoding
+< Connection: close
+< Transfer-Encoding: chunked
+< Content-Type: text/html
+< 
+* Expire cleared
+* Closing connection #0

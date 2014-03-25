@@ -1,0 +1,202 @@
+PAPModulesDictionary Object
+(
+    [_modules:private] => Array
+        (
+            [test module] => PAPModuleCommandLevels Object
+                (
+                    [_levels:private] => Array
+                        (
+                            [0] => PAPModuleCommand Object
+                                (
+                                    [_name:private] => test module
+                                    [_path:private] => ./modules/module.php
+                                    [_config:private] => DataGroup Object
+                                        (
+                                            [_values:private] => DataContainer Object
+                                                (
+                                                    [_values:private] => ValueHolder Object
+                                                        (
+                                                            [value] => Array
+                                                                (
+                                                                    [papName] => test module
+                                                                    [papPath] => ./modules/module.php
+                                                                    [papWorkingDir] => ./modules
+                                                                    [papMinInstances] => 0
+                                                                    [papMaxInstances] => 0
+                                                                    [papAllowRestart] => 1
+                                                                    [papAutorestartTimeout] => 0
+                                                                    [papTrustedModule] => 0
+                                                                    [papAllowShutdown] => 1
+                                                                    [papAllowReconfiguration] => 0
+                                                                    [papAllowRestartOnCrash] => 1
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [_groups:private] => ValueHolder Object
+                                                (
+                                                    [value] => Array
+                                                        (
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [_parameters:private] => Array
+                                        (
+                                        )
+
+                                    [_workingDir:private] => ./modules
+                                )
+
+                            [1] => PAPModuleCommand Object
+                                (
+                                    [_name:private] => test module
+                                    [_path:private] => ./modules/module.php
+                                    [_config:private] => DataGroup Object
+                                        (
+                                            [_values:private] => DataContainer Object
+                                                (
+                                                    [_values:private] => ValueHolder Object
+                                                        (
+                                                            [value] => Array
+                                                                (
+                                                                    [papName] => test module
+                                                                    [papPath] => ./modules/module.php
+                                                                    [papWorkingDir] => ./modules
+                                                                    [papMinInstances] => 0
+                                                                    [papMaxInstances] => 0
+                                                                    [papAllowRestart] => 1
+                                                                    [papAutorestartTimeout] => 0
+                                                                    [papTrustedModule] => 0
+                                                                    [papAllowShutdown] => 1
+                                                                    [papAllowReconfiguration] => 0
+                                                                    [papAllowRestartOnCrash] => 1
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [_groups:private] => ValueHolder Object
+                                                (
+                                                    [value] => Array
+                                                        (
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [_parameters:private] => Array
+                                        (
+                                        )
+
+                                    [_workingDir:private] => ./modules
+                                )
+
+                            [5] => PAPModuleCommand Object
+                                (
+                                    [_name:private] => test module
+                                    [_path:private] => ./modules/module.php
+                                    [_config:private] => DataGroup Object
+                                        (
+                                            [_values:private] => DataContainer Object
+                                                (
+                                                    [_values:private] => ValueHolder Object
+                                                        (
+                                                            [value] => Array
+                                                                (
+                                                                    [papName] => test module
+                                                                    [papPath] => ./modules/module.php
+                                                                    [papWorkingDir] => ./modules
+                                                                    [papMinInstances] => 0
+                                                                    [papMaxInstances] => 0
+                                                                    [papAllowRestart] => 1
+                                                                    [papAutorestartTimeout] => 0
+                                                                    [papTrustedModule] => 0
+                                                                    [papAllowShutdown] => 1
+                                                                    [papAllowReconfiguration] => 0
+                                                                    [papAllowRestartOnCrash] => 1
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [_groups:private] => ValueHolder Object
+                                                (
+                                                    [value] => Array
+                                                        (
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [_parameters:private] => Array
+                                        (
+                                        )
+
+                                    [_workingDir:private] => ./modules
+                                )
+
+                        )
+
+                    [_default:private] => PAPModuleCommand Object
+                        (
+                            [_name:private] => test module
+                            [_path:private] => ./modules/module.php
+                            [_config:private] => DataGroup Object
+                                (
+                                    [_values:private] => DataContainer Object
+                                        (
+                                            [_values:private] => ValueHolder Object
+                                                (
+                                                    [value] => Array
+                                                        (
+                                                            [papName] => test module
+                                                            [papPath] => ./modules/module.php
+                                                            [papWorkingDir] => ./modules
+                                                            [papMinInstances] => 0
+                                                            [papMaxInstances] => 0
+                                                            [papAllowRestart] => 1
+                                                            [papAutorestartTimeout] => 0
+                                                            [papTrustedModule] => 0
+                                                            [papAllowShutdown] => 1
+                                                            [papAllowReconfiguration] => 0
+                                                            [papAllowRestartOnCrash] => 1
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [_groups:private] => ValueHolder Object
+                                        (
+                                            [value] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                            [_parameters:private] => Array
+                                (
+                                    [parameterName] => parameterValue
+                                )
+
+                            [_workingDir:private] => ./modules
+                        )
+
+                )
+
+        )
+
+    [_path:private] => 
+    [_workingDir:private] => C:\Documents and Settings\Oleg\Local Settings\Temp/
+)

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<core>
+		<connections>
+			<connection>
+				<name>
+					<!-- Connection name, if name not specified, will use string from index. Optional -->
+					socket
+				</name>
+				<path>
+					<!-- Path for additional classes, may be any count of such nodes. Optional -->
+				</path>
+				<factory>
+					<!-- Factory class name, that implement IPAPConnectionFactory. Required -->
+					PAPSocketConnectionFactory
+				</factory>
+					<!-- Connection specific configuration -->
+					<host>
+						<!-- Host for socket connection -->
+						127.0.0.1
+					</host>
+					<port>
+						<!-- Port for socket connection -->
+						3601
+					</port>
+					<unixPath>
+						<!-- Path for Unix socket connection -->
+						/tmp/php.pap.sock
+					</unixPath>
+					<maxInboundConnections>
+						<!-- Maximum inbound connection that allowed to be connected at one time, connections over this bounds will be declined. Optional, 0 by default, means there are no restrictions -->
+						0
+					</maxInboundConnections>
+					<packageMaxLength>
+						<!-- Maximum package data size, if data has bigger size, it will be splitted to couple packages. Each package must have the same ID and properties "partIndex", "partsCount" -->
+						4096
+					</packageMaxLength>
+					<bufferLength>
+						<!-- Input buffer size in bytes -->
+						32768
+					</bufferLength>
+					<wrapperPath>
+						<!-- 
+						Wrapper's path. If not defined, http launcher will be disabled. Optional, if not defined, will be 
+						used core path plus "../wrapper.php" -->
+					</wrapperPath>
+					<prefferedMethod>
+						<!-- 
+						Preffered medthod to open HTTP connection and call wrapper. Empty value means that preffered method 
+						will be selected automatically. Optional, empty by default. -->
+					</prefferedMethod>
+					<protocol>
+						<!-- 
+						Protocol to call wrapper, http or https values available. Optional, "http" by default. -->
+						http
+					</protocol>
+					<port>
+						<!-- Port to call wrapper. Optional, empty by default. -->
+					</port>
+				<wrapperResponseTimeout>
+					<!-- Maximum amount of time while application will wait for response from wrapper in milliseconds. Optional, empty by default. -->
+					500
+				</wrapperResponseTimeout>
+			</connection>
+			<protocol>
+				<!--
+				Data protocol, that will be used to serialize and transport data. -->
+				DefaultProtocolService
+			</protocol>
+		</connections>
+		<authorization>
+			<!-- Authorization keys for modules and clients. Optional, if not defined, will be used internal trust levels(registered modules are highly trusted and not registered - medium trusted, clients are not trusted). -->
+			<key>
+				<!-- This is key for all trust levels that was not specified, optional. If all trust levels was specified, will be ignored. If only this(shared) keys specified, will use trust mechanism that used when no authorization used. -->
+			</key>
+			<high>
+				<!-- Authorization keys for highly trusted modules. May be used any count of keys -->
+				<key>gesthgEHWHW$5hw54hHswh46westhS^J</key>
+				<key>%YW$%YW$%HwhwhhrhsrhRYhdxthHHR^T</key>
+				<key>#@E@#ed2fc2F#gHNJDShrtdHDjt3q4rQ</key>
+			</high>
+			<medium>
+				<!-- Authorization keys for medium trusted modules. May be used any count of keys -->
+				<key>gesthgEHWHW$5hw54hHswh46westhS^J</key>
+				<key>%YW$%YW$%HwhwhhrhsrhRYhdxthHHR^T</key>
+			</medium>
+			<low>
+				<!-- Authorization keys for not trusted modules. May be used any count of keys -->
+				<key>gesthgEHWHW$5hw54hHswh46westhS^J</key>
+			</low>
+			<client>
+				<!-- Authorization keys for clients. May be used any count of keys, if specified, will be used for all connected clients -->
+				hello
+			</client>
+		</authorization>
+		<states>
+			<state>
+				<name>active</name>
+				<tick>50</tick>
+				<timeout>30</timeout>
+				<enableEvents>
+					<!-- If 1, will dispatch TICK_ENTER and TICK_EXIT events. Optional, 1 by default -->
+					1
+				</enableEvents>
+				<calculateLoad>
+					<!-- Will calculate load percentage per tick, right before TICK_EXIT event. Optional, 1 by default -->
+					1
+				</calculateLoad>
+			</state>
+			<state>
+				<name>inactive</name>
+				<tick>100</tick>
+				<timeout>60</timeout>
+			</state>
+			<state>
+				<name>sleep</name>
+				<tick>250</tick>
+				<timeout>0</timeout>
+			</state>
+		</states>
+		<launch>
+			<module>
+				<name>
+					<!-- Module name, only registered modules can be launched automatically -->
+					
+				</name>
+				<instanceCount>
+					<!-- Count of required instances, value must be in papMinInstances/papMaxInstances borders. -->
+					1
+				</instanceCount>
+			</module>
+		</launch>
+		<allowClientInitiation>
+			<!-- 
+			Allow client to lauch core if no core connection detected. Optional, 0 by default. -->
+		</allowClientInitiation>
+		<allowExternalModules>
+			<!-- 
+			If TRUE, will allow module connections without IDs. Optional, 0 by default - not allowed -->
+			0
+		</allowExternalModules>
+		<allowRAWLaunch>
+			<!-- 
+			Will allow RAW launch for modules that have trust level MEDIUM or more -->
+		</allowRAWLaunch>
+		<loggerModule>
+			<!-- 
+			Specifies logger module that will receive all log messages from each client/module 
+			and from core. Optional, empty by default. Logger module configuration will be overwritten for logger instance - only one instance allowable and allowed autorestart on crash. -->
+			
+		</loggerModule>
+		<modules>
+			<path>
+				<!-- 
+				Default path where modules are placed. Optional, if not specified, each module 
+				must define own path or default PHP include path will be used. If shared path 
+				used, file name will be constructed like: $sharedPath.'/'.$moduleName.'.php' -->
+			</path>
+			<workingDir>
+				<!-- 
+				Default working dir, if not defined, temp directory will be used. -->
+			</workingDir>
+			<module>
+				<name>
+					<!-- 
+					Module name value. This name can be used when accessing module. Required -->
+					test module
+				</name>
+				<path>
+					<!-- 
+					Module path. Required -->
+					./modules/module.php
+				</path>
+				<workingDir>
+					<!-- 
+					Module working directory. Optional, temporary directory used by default. -->
+					./modules
+				</workingDir>
+				<launchParameters>
+					<!-- Parameters for module launcher, will be passed as PAPModuleCommand::parameters -->
+					<parameterName>parameterValue</parameterName>
+				</launchParameters>
+				<launcherOrder>
+					<!-- Order of connection launchers that will be used while launching this module -->
+					proc
+				</launcherOrder>
+				<launcherOrder>exec</launcherOrder>
+				<connectionOrder>
+					<!-- Order of connection types that will be used to connect module to core -->
+					proc
+				</connectionOrder>
+				<connectionOrder>socket</connectionOrder>
+				<connectionOrder>file</connectionOrder>
+				<!-- connection> DEPRECATED because of connectionOrder
+					<!- - 
+					Connection name(or index, if no such name and it is a int type), that will be used to connect to this module. Optional, not specified, by default - ->
+				</connection -->
+				<minInstances>
+					<!-- 
+					Minimum count of instances that can be launched at a time. Some of modules may require couple instances launched at one time. Optional, 0 by default - means that minimum count is not specified. -->
+					0
+				</minInstances>
+				<maxInstances>
+					<!-- 
+					Maximum count of instances that can be launched at a time. Optional, 0 by default - means that minimum count is not specified -->
+					0
+				</maxInstances>
+				<allowRestart>
+					<!-- 
+					Is module allowed to be restarted remotely, by trusted module. Optional, 
+					1 by default. -->
+					1
+				</allowRestart>
+				<autorestartTimeout>
+					<!-- 
+					If value bigger than 0 will be defined, core will restart this module by timeout 
+					in seconds. Optional, 0 by default. -->
+					0
+				</autorestartTimeout>
+				<trustedModule>
+					<!-- 
+					Is module trusted by default. If 1, will receive highest trust level in any case. 
+					Optional, 0 by default. -->
+					0
+				</trustedModule>
+				<allowShutdown>
+					<!-- 
+					Is module allowed to be shutdown remotely(by another trusted module). 
+					Optional, 1 by default -->
+					1
+				</allowShutdown>
+				<allowReconfiguration>
+					<!-- 
+					Is default module config can be changed remotely by another module. 
+					Reconfigured module will not restart and will not recieve updated config 
+					automatically, it must be restarted automatically and then will receive 
+					new configuration. pap* configurations can not be overwritten. Optional, 
+					0 by default. -->
+					0
+				</allowReconfiguration>
+				<allowRestartOnCrash>
+					<!-- Is allowed to restart module when it crashes. Optional, 1 by default. -->
+					1
+				</allowRestartOnCrash>
+				<allowAccess>
+					<!-- Trust level required to contact with this module. Optional, 0 by default. 0 value means no requirements and even client can contact this module. -->
+				</allowAccess>
+				<instances>
+					<!-- 
+					Optional, instance specific configs. Each instance will be determined by it's 
+					papIndex. pap* configs not allowed here. -->
+					<instance>
+						<!-- instance specific config here. -->
+						<index>
+							<!--  index = 0 -->
+							0
+						</index>
+					</instance>
+					<instance>
+						<!-- instance specific config here. -->
+						<index>
+							<!--  index = 1 -->
+							1
+						</index>
+						<autorestartTimeout>3600</autorestartTimeout>
+					</instance>
+					<instance>
+						<!-- instance specific config here. index = 2 -->
+						<index>
+							<!--  index = 2 -->
+							2
+						</index>
+					</instance>
+				</instances>
+			</module>
+		</modules>
+		<clients>
+			<!-- Optional configuration for all connected clients. Any data -->
+		</clients>
+	</core>
+	<module>
+		<!-- Module must be configured through core -->
+	</module>
+	<client>
+		<connection>
+			<!-- Client requires the same config  -->
+		</connection>
+	</client>
+</config>

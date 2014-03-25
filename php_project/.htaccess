@@ -1,0 +1,5 @@
+SetEnvIfNoCase Request_URI "\.php$" no-gzip dont-vary
+php_flag output_buffering Off
+php_value output_handler none
+php_flag zlib.output_compression Off
+Options -Indexes
